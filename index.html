@@ -1,382 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Ankit Kumar</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Ankit Kumar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .projects-header {
+      text-align: center;
+      padding: 5rem 2rem 2rem;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    .projects-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .projects-header p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    /* Cards Container */
+    .project-category-container {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* Card */
+    .project-category-card {
+      width: 330px;
+      background: white;
+      color: black;
+      border-radius: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: all 0.4s ease;
+      transform: translateY(40px);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .project-category-card:nth-child(1) { animation-delay: 0.3s; }
+    .project-category-card:nth-child(2) { animation-delay: 0.6s; }
+    .project-category-card:nth-child(3) { animation-delay: 0.9s; }
+
+    .project-category-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    /* Image */
+    .project-category-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-category-card:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Content */
+    .category-content {
+      padding: 1.8rem;
+      text-align: center;
+    }
+
+    .category-content h2 {
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .category-content p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Back Button */
+    .back-home {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: white;
+      color: #203a43;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back-home a:hover {
+      background: #2c5364;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .projects-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .project-category-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="projects-header">
+    <h1>My Project Categories</h1>
+    <p>Select a category to explore my Data Analytics work</p>
+  </div>
+
+  <div class="project-category-container">
+
+    <!-- Python Projects -->
+    <a href="python-projects.html" class="project-category-card">
+      <img src="./assets/python.jpg" alt="Python Projects">
+      <div class="category-content">
+        <h2>Python Projects</h2>
+        <p>Financial Models, Automation, Streamlit Apps, Data Analysis</p>
       </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Ankit Kumar</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
+    </a>
+
+    <!-- Data Science Projects -->
+    <a href="datascience-projects.html" class="project-category-card">
+      <img src="./assets/datascience.jpg" alt="Data Science Projects">
+      <div class="category-content">
+        <h2>Data Science Projects</h2>
+        <p>Machine Learning, Predictive Models, Statistical Analysis</p>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Ankit Kumar profile picture" />
+    </a>
+
+    <!-- Power BI Projects -->
+    <a href="powerbi-projects.html" class="project-category-card">
+      <img src="./assets/powerbi.jpg" alt="Power BI Dashboards">
+      <div class="category-content">
+        <h2>Power BI Dashboards</h2>
+        <p>Interactive Business Dashboards & KPI Reporting</p>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Ankit Kumar</h1>
-        <p class="section__text__p2">Business Analyst</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/ankit-kumar-125a26251/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>1+ years <br />Business Analyst</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bachelors of Pharmacy</p>
-            </div>
-          </div>
-          <div class="text-container">
-              <p>
-                  Results-driven Business Analyst with a strong foundation in data analysis, 
-                  SQL, Python, and BI tools like Power BI and Tableau. 
-                  Experienced in leveraging data-driven insights to optimize operations, 
-                  enhance decision-making, and improve business processes. Skilled in stakeholder management, 
-                  cross-functional collaboration, and strategic planning. Passionate about utilizing 
-                  analytical and technical expertise to drive business growth and efficiency.
-              </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-              <h2 class="experience-sub-title">Exploratory Data Analysis</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Excel</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Power BI</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Azure/AWS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>   My SQL .....  </h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>DataBrick</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Machine learning</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Supervised Learning</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                    <h3>UnSupervised Learning</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Model Optimizations</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:ankitsinghzeta1@gmail.com">Ankitsinghzeta1@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/ankit-kumar-125a26251/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    </a>
+
+  </div>
+
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+</body>
 </html>
