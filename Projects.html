@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects | Ankit Kumar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .project-card {
+            background: white;
+            color: black;
+            width: 320px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .project-content p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media(max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .project-card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Projects</h1>
+    <p>Explore my Data Analytics & Visualization Work</p>
+</header>
+
+<section class="projects-container">
+
+    <!-- Python Projects -->
+    <a href="python-projects.html" class="project-card">
+        <img src="images/python.png" alt="Python Projects">
+        <div class="project-content">
+            <h3>Python Projects</h3>
+            <p>Automation, Data Analysis, Streamlit Apps, Financial Models</p>
+        </div>
+    </a>
+
+    <!-- Data Science Projects -->
+    <a href="datascience-projects.html" class="project-card">
+        <img src="images/datascience.jpg" alt="Data Science Projects">
+        <div class="project-content">
+            <h3>Data Science Projects</h3>
+            <p>Machine Learning, Predictive Models, Statistical Analysis</p>
+        </div>
+    </a>
+
+    <!-- Power BI Projects -->
+    <a href="powerbi-projects.html" class="project-card">
+        <img src="images/powerbi.jpg" alt="Power BI Dashboards">
+        <div class="project-content">
+            <h3>Power BI Dashboards</h3>
+            <p>Interactive Business Dashboards & KPI Reporting</p>
+        </div>
+    </a>
+
+</section>
+
+<footer>
+    © 2026 Ankit Kumar | Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
